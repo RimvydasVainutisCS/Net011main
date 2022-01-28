@@ -13,16 +13,18 @@ namespace Net011
                 TextMaterial trainMat = new TextMaterial("Hello world",
                     "description one");
 
-                VideoMaterial videoMat = new VideoMaterial(Guid.NewGuid(),
-                    "Video Material description 1",
-                    "localhost://rimvydasvainutisCS/videolessons/lessson1",
+                VideoMaterial videoMat = new VideoMaterial("localhost://rimvydasvainutisCS/videolessons/lessson1",
                     "localhost://rimvydasvainutisCS/videolessons/lessson1/splashscreen",
                     VideoFormats.Unknown);
 
-                LinkToNetRsc linkToNetRsc = new LinkToNetRsc(Guid.NewGuid(),
-                    "Link to Net Resource 1",
-                    "https://www.netsite.com/resources/resource1/lesson1.html",
+                videoMat.Description = "description example 111";
+                videoMat.
+
+                LinkToNetRsc linkToNetRsc = new LinkToNetRsc("https://www.netsite.com/resources/resource1/lesson1.html",
                     LinkTypes.Html);
+
+                var lesson1 = new TrainingLesson();
+                lesson1.TrainingMaterials.Add(trainMat);
             }
             catch (Exception ex)
             {

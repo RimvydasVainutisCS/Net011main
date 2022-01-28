@@ -2,15 +2,7 @@
 
 namespace Net011
 {
-    public enum VideoFormats
-    {
-        Unknown,
-        Avi,
-        Mp4,
-        Flv
-    };
-
-    public class VideoMaterial : TrainingEntity
+    public class VideoMaterial : TrainingMaterial
     {
         private string _videoContentUri;
         private string _splashScreenUri;
@@ -48,7 +40,7 @@ namespace Net011
             }
         }
 
-        public VideoMaterial(Guid id, string description, string videoContentUri, string splashScreenUri, VideoFormats videoFormat) : base(id, description)
+        public VideoMaterial(string videoContentUri, string splashScreenUri, VideoFormats videoFormat)
         {
             _videoContentUri = videoContentUri;
             _splashScreenUri = splashScreenUri;

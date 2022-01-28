@@ -31,7 +31,7 @@ namespace Net011
         }
 
         // ask Igor if this is the right way
-        public TextMaterial(string text, string description) : base(id, description)
+        public TextMaterial(string text, string description)
         {
             Text = text;
             Description = description;

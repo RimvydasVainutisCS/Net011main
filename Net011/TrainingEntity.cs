@@ -5,7 +5,11 @@ namespace Net011
     public abstract class TrainingEntity
     {
         private string _description;
-        public System.Guid Id { get; set; }
+        private Guid _id;
+        public Guid Id
+        {
+            get { return _id; }
+        }
         public string Description
         {
             get
@@ -18,21 +22,23 @@ namespace Net011
                 {
                     throw new Exception("Description is longer than 256 chars.");
                 }
-                else if (value == null)
+                else if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("Description can't have 'null' value.");
+                    throw new Exception("Invalid input.");
                 }
-                else if (value.Length < 1)
-                {
-                    throw new Exception("Description can't have 'empty' value.");
-                }
+                //else if (value == null)
+                //{
+                //    throw new Exception("Description can't have 'null' value.");
+                //}
+                //else if (value.Length < 1)
+                //{
+                //    throw new Exception("Description can't have 'empty' value.");
+                //}
                 _description = value;
             }
         }
-        public TrainingEntity(System.Guid id, string description)
-        {
-            Id = id;
-            Description = description;
+        public TrainingEntity()
+        {            
         }
 
     }

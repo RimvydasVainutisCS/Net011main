@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Net011
 {
-    public abstract class TrainingLesson : TrainingEntity
+    public class TrainingLesson : TrainingEntity
     {
         private string _trainingLessonType;
-        protected TrainingLesson(Guid id, string description) : base(id, description)
+        public List<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
+        public TrainingLesson()
         {
         }
 

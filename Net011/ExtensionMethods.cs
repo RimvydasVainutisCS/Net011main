@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Net011
 {
-    public class TrainingMaterial : TrainingEntity
+    public static class ExtensionMethods
     {
-        public TrainingMaterial(Guid id, string description)
+        public static void SetId(TrainingEntity entity)
         {
+            entity.Id = Guid.NewGuid();
         }
     }
 }
