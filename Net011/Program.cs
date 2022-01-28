@@ -18,7 +18,6 @@ namespace Net011
                     VideoFormats.Unknown);
 
                 videoMat.Description = "description example 111";
-                videoMat.
 
                 LinkToNetRsc linkToNetRsc = new LinkToNetRsc("https://www.netsite.com/resources/resource1/lesson1.html",
                     LinkTypes.Html);
