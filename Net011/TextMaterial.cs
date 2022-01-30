@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Net011
 {
-    // Contents:
-
-    // an arbitrary text description (empty or null, limited to 256 chars)
-    public class TextMaterial : TrainingEntity
+    public class TextMaterial : TrainingMaterial
     {
         private string _text;
-        private static Guid id;
 
         public string Text
         {
@@ -30,7 +22,6 @@ namespace Net011
             }
         }
 
-        // ask Igor if this is the right way
         public TextMaterial(string text, string description)
         {
             Text = text;

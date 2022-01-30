@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Net011
-{    
-    internal class LinkToNetRsc : TrainingEntity
+﻿namespace Net011
+{
+    internal class LinkToNetRsc : TrainingMaterial
     {
         private string _contentUri;
-        private LinkTypes _linkType;
+        private LinkType _linkType;
 
-        public LinkToNetRsc(string contentUri, LinkTypes linkType)
+        public LinkToNetRsc(string contentUri, LinkType linkType)
         {
             _contentUri = contentUri;
             _linkType = linkType;

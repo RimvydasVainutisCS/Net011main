@@ -51,7 +51,7 @@
     <Compile Include="TextMaterial.cs" />
     <Compile Include="TrainingLesson.cs" />
     <Compile Include="TrainingMaterial.cs" />
-    <Compile Include="VideoFormats.cs" />
+    <Compile Include="VideoFormat.cs" />
     <Compile Include="VideoMaterial.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ namespace Net011
     {
         private string _videoContentUri;
         private string _splashScreenUri;
-        private VideoFormats _videoFormats;
+        private VideoFormat _videoFormats;
 
         public string VideoContentUri
         {
@@ -40,7 +40,7 @@ namespace Net011
             }
         }
 
-        public VideoMaterial(string videoContentUri, string splashScreenUri, VideoFormats videoFormat)
+        public VideoMaterial(string videoContentUri, string splashScreenUri, VideoFormat videoFormat)
         {
             _videoContentUri = videoContentUri;
             _splashScreenUri = splashScreenUri;

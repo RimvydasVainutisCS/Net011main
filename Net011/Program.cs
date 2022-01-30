@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomExtensions;
+using System;
 
 namespace Net011
 {
@@ -15,15 +16,20 @@ namespace Net011
 
                 VideoMaterial videoMat = new VideoMaterial("localhost://rimvydasvainutisCS/videolessons/lessson1",
                     "localhost://rimvydasvainutisCS/videolessons/lessson1/splashscreen",
-                    VideoFormats.Unknown);
+                    VideoFormat.Unknown);
 
                 videoMat.Description = "description example 111";
 
+                // 4 create extension method...
+                videoMat.SetId();
+
                 LinkToNetRsc linkToNetRsc = new LinkToNetRsc("https://www.netsite.com/resources/resource1/lesson1.html",
-                    LinkTypes.Html);
+                    LinkType.Html);
 
                 var lesson1 = new TrainingLesson();
                 lesson1.TrainingMaterials.Add(trainMat);
+                lesson1.TrainingMaterials.Add(videoMat);
+                lesson1.TrainingMaterials.Add(linkToNetRsc);
             }
             catch (Exception ex)
             {

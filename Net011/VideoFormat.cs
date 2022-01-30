@@ -1,18 +1,24 @@
 ﻿namespace Net011
 {
-    public enum VideoFormats
+    public enum VideoFormat
     {
         Unknown,
         Avi,
         Mp4,
         Flv
     };
-    public enum LinkTypes
+    public enum LinkType
     {
         Unknown,
         Html,
         Image,
         Audio,
         Video
+    }
+
+    public enum LessonType
+    {
+        VideoLesson,
+        TextLesson
     }
 }

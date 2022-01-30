@@ -5,10 +5,10 @@ namespace Net011
     public abstract class TrainingEntity
     {
         private string _description;
-        private Guid _id;
         public Guid Id
         {
-            get { return _id; }
+            get;
+            set;
         }
         public string Description
         {
@@ -26,20 +26,11 @@ namespace Net011
                 {
                     throw new Exception("Invalid input.");
                 }
-                //else if (value == null)
-                //{
-                //    throw new Exception("Description can't have 'null' value.");
-                //}
-                //else if (value.Length < 1)
-                //{
-                //    throw new Exception("Description can't have 'empty' value.");
-                //}
                 _description = value;
             }
         }
         public TrainingEntity()
         {            
         }
-
     }
 }
