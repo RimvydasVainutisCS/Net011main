@@ -1,5 +1,6 @@
 ﻿using CustomExtensions;
 using System;
+using System.Collections.Generic;
 
 namespace Net011
 {
@@ -30,6 +31,14 @@ namespace Net011
                 lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(videoMat);
                 lesson1.TrainingMaterials.Add(linkToNetRsc);
+                var result1 = lesson1.GetTrainingType();
+
+                var lesson2 = new TrainingLesson
+                {
+                    TrainingMaterials = new List<TrainingMaterial> { trainMat, linkToNetRsc}
+                };
+                var result2 = lesson2.GetTrainingType();
+
             }
             catch (Exception ex)
             {
