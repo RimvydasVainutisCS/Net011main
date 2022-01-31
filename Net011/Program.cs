@@ -12,13 +12,12 @@ namespace Net011
 
             try
             {
-                TextMaterial trainMat = new TextMaterial("Hello world",
-                    "description one");
+                TextMaterial trainMat = new TextMaterial("Hello world");
+                trainMat.Description = "trainMat description goes here";
 
                 VideoMaterial videoMat = new VideoMaterial("localhost://rimvydasvainutisCS/videolessons/lessson1",
                     "localhost://rimvydasvainutisCS/videolessons/lessson1/splashscreen",
-                    VideoFormat.Unknown);
-
+                    VideoFormat.Unknown);                
                 videoMat.Description = "description example 111";
 
                 // 4 create extension method...
@@ -28,9 +27,13 @@ namespace Net011
                     LinkType.Html);
 
                 var lesson1 = new TrainingLesson();
+                
                 lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(videoMat);
                 lesson1.TrainingMaterials.Add(linkToNetRsc);
+                Console.WriteLine(trainMat.ToString());
+                Console.WriteLine(videoMat.ToString());
+                Console.ReadLine();
                 var result1 = lesson1.GetTrainingType();
 
                 var lesson2 = new TrainingLesson
@@ -38,7 +41,6 @@ namespace Net011
                     TrainingMaterials = new List<TrainingMaterial> { trainMat, linkToNetRsc}
                 };
                 var result2 = lesson2.GetTrainingType();
-
             }
             catch (Exception ex)
             {

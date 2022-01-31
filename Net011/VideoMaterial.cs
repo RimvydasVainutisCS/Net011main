@@ -46,5 +46,10 @@ namespace Net011
             _splashScreenUri = splashScreenUri;
             _videoFormats = videoFormat;
         }
+
+        public override string ToString()
+        {
+            return Description;
+        }
     }
 }

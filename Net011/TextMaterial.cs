@@ -22,10 +22,14 @@ namespace Net011
             }
         }
 
-        public TextMaterial(string text, string description)
+        public TextMaterial(string text)
         {
             Text = text;
-            Description = description;
+        }
+
+        public override string ToString()
+        {
+            return Description;
         }
     }
 }
