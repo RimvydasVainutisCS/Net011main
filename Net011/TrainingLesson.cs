@@ -42,22 +42,19 @@ namespace Net011
             return Description;
         }
 
-        //public override bool Equals(object obj)
-        //{
-        //    if (obj == null)
-        //    {
-        //        return false;
-        //    }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is TrainingMaterial))
+            {
+                return false;
+            }
+            return (Id == ((TrainingMaterial)obj).Id);
+        }
 
-        //    if (!(obj is TrainingMaterial))
-        //    {
-        //        return false;
-        //    }
-
-        //    if (this.Id == (obj as TrainingMaterial).Id)
-        //    {
-        //        return true;
-        //    }
-        //}
+        public override int GetHashCode() { return 0; }
     }
 }
