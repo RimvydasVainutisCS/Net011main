@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Net011
 {
-    // Contents:
-
-    // an arbitrary text description (empty or null, limited to 256 chars)
     public class TextMaterial : TrainingEntity
     {
         private string _text;
