@@ -31,5 +31,19 @@ namespace Net011
         {
             return Description;
         }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is TextMaterial))
+            {
+                return false;
+            }
+            return (Id == ((TextMaterial)obj).Id);
+        }
+
+        public override int GetHashCode() { return 0; }
     }
 }

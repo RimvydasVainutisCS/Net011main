@@ -22,6 +22,8 @@ namespace Net011
 
                 // 4 create extension method...
                 videoMat.SetId();
+                // 5 check if ID is same
+                Console.WriteLine(videoMat.Equals(videoMat));
 
                 LinkToNetRsc linkToNetRsc = new LinkToNetRsc("https://www.netsite.com/resources/resource1/lesson1.html",
                     LinkType.Html);

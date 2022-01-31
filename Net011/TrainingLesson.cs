@@ -36,5 +36,28 @@ namespace Net011
                 return LessonType.TextLesson;
             }
         }
+
+        public override string ToString()
+        {
+            return Description;
+        }
+
+        //public override bool Equals(object obj)
+        //{
+        //    if (obj == null)
+        //    {
+        //        return false;
+        //    }
+
+        //    if (!(obj is TrainingMaterial))
+        //    {
+        //        return false;
+        //    }
+
+        //    if (this.Id == (obj as TrainingMaterial).Id)
+        //    {
+        //        return true;
+        //    }
+        //}
     }
 }

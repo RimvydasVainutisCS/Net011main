@@ -51,5 +51,19 @@ namespace Net011
         {
             return Description;
         }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is VideoMaterial))
+            {
+                return false;
+            }
+            return (Id == ((VideoMaterial)obj).Id);
+        }
+
+        public override int GetHashCode() { return 0; }
     }
 }
