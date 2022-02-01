@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Net011
 {
-    public class TrainingLesson : TrainingEntity, IVersionable
+    public class TrainingLesson : TrainingEntity, IVersionable, ICloneable
     {
         private byte[] _version = new byte[8];
         public List<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
@@ -66,6 +67,16 @@ namespace Net011
         public void SetVersion(byte[] version)
         {
             _version = version;
+        }
+
+        public TrainingLesson Clone()
+        {
+            var clone = new TrainingLesson
+            {
+                Id = Id,
+                Description = Description,
+            };
+            return clone;
         }
     }
 }

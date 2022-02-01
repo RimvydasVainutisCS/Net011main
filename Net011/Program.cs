@@ -31,12 +31,16 @@ namespace Net011
                 var lesson1 = new TrainingLesson();
                 
                 lesson1.TrainingMaterials.Add(trainMat);
-                lesson1.TrainingMaterials.Add(videoMat);
+                lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(linkToNetRsc);
                 Console.WriteLine(trainMat.ToString());
                 Console.WriteLine(videoMat.ToString());
                 Console.ReadLine();
                 var result1 = lesson1.GetTrainingType();
+
+                var lesson1Clone = lesson1.Clone();
+                lesson1Clone.TrainingMaterials.Add(videoMat);
+                var result1Clone = lesson1Clone.GetTrainingType();
 
                 var lesson2 = new TrainingLesson
                 {
