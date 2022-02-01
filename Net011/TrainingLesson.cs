@@ -3,8 +3,9 @@ using System.Linq;
 
 namespace Net011
 {
-    public class TrainingLesson : TrainingEntity
+    public class TrainingLesson : TrainingEntity, IVersionable
     {
+        private byte[] _version = new byte[8];
         public List<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
         public TrainingLesson()
         {
@@ -56,5 +57,15 @@ namespace Net011
         }
 
         public override int GetHashCode() { return 0; }
+
+        public byte[] GetVersion()
+        {
+            return _version;
+        }
+
+        public void SetVersion(byte[] version)
+        {
+            _version = version;
+        }
     }
 }

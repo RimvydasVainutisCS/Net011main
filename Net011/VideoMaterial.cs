@@ -2,11 +2,12 @@
 
 namespace Net011
 {
-    public class VideoMaterial : TrainingMaterial
+    public class VideoMaterial : TrainingMaterial, IVersionable
     {
         private string _videoContentUri;
         private string _splashScreenUri;
         private VideoFormat _videoFormats;
+        private byte[] _version = new byte[8];
 
         public string VideoContentUri
         {
@@ -65,5 +66,15 @@ namespace Net011
         }
 
         public override int GetHashCode() { return 0; }
+
+        public byte[] GetVersion()
+        {
+            return _version;
+        }
+
+        public void SetVersion(byte[] version)
+        {
+            _version = version;
+        }
     }
 }

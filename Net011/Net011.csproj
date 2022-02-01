@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IVersionable.cs" />
     <Compile Include="TrainingEntity.cs" />
     <Compile Include="LinkToNetRsc.cs" />
     <Compile Include="Program.cs" />
