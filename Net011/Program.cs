@@ -33,12 +33,16 @@ namespace Net011
                 lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(linkToNetRsc);
+                lesson1.SetVersion(new byte[8]{8,5,2,1,5,6,8,9});
+                lesson1.SetId();
+                lesson1.Description = "asdfadasd";
+
                 Console.WriteLine(trainMat.ToString());
                 Console.WriteLine(videoMat.ToString());
-                Console.ReadLine();
+                
                 var result1 = lesson1.GetTrainingType();
 
-                var lesson1Clone = lesson1.Clone();
+                var lesson1Clone =  (TrainingLesson)lesson1.Clone();
                 lesson1Clone.TrainingMaterials.Add(videoMat);
                 var result1Clone = lesson1Clone.GetTrainingType();
 
