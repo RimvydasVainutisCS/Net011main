@@ -29,16 +29,20 @@ namespace Net011
                     LinkType.Html);
 
                 var lesson1 = new TrainingLesson();
-                
+
                 lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(trainMat);
                 lesson1.TrainingMaterials.Add(linkToNetRsc);
+                lesson1.SetVersion(new byte[8] { 8, 5, 2, 1, 5, 6, 8, 9 });
+                lesson1.SetId();
+                lesson1.Description = "lesson1 description goes here!";
+
                 Console.WriteLine(trainMat.ToString());
-                Console.WriteLine(videoMat.ToString());
-                Console.ReadLine();
+                Console.WriteLine(linkToNetRsc.ToString());
+
                 var result1 = lesson1.GetTrainingType();
 
-                var lesson1Clone = lesson1.Clone();
+                var lesson1Clone = (TrainingLesson)lesson1.Clone();
                 lesson1Clone.TrainingMaterials.Add(videoMat);
                 var result1Clone = lesson1Clone.GetTrainingType();
 
