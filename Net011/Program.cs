@@ -93,10 +93,10 @@ namespace Net011
                 Console.WriteLine($"Lesson 2 type is: {lesson2type}.");
                 Console.WriteLine($"Lesson 2 Version is: {lesson2version}.");
 
-
-
-                // CLONE
+                //----- Creating a Clone of Lesson 1 and adding Video Material to change the type of Lesson from Text to Video -----//
                 var lesson1Clone = (TrainingLesson)lesson1.Clone();
+                lesson1Clone.SetId();
+                lesson1Clone.Description = "Clone of lesson 1 description.";
                 lesson1Clone.TrainingMaterials.Add(videoMat1);
                 var result1Clone = lesson1Clone.GetTrainingType();
             }
