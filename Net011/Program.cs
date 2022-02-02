@@ -76,7 +76,7 @@ namespace Net011
                 lesson1.SetVersion(new byte[8] { 2, 0, 2, 2, 0, 2, 0, 1 });
 
                 var lesson1type = lesson1.GetTrainingType();
-                Console.WriteLine($"Lesson 1 type is: {lesson1type}.");
+                Console.WriteLine($"Lesson 1 training type is: {lesson1type}.");
 
                 //----- Creating Lesson 2 (adding items through parameters) -----//
                 var lesson2 = new TrainingLesson
@@ -90,7 +90,7 @@ namespace Net011
                 var lesson2type = lesson2.GetTrainingType();
                 var lesson2version = lesson2.GetVersion();
                 
-                Console.WriteLine($"Lesson 2 type is: {lesson2type}.");
+                Console.WriteLine($"Lesson 2 training type is: {lesson2type}.");
                 Console.WriteLine($"Lesson 2 Version is: {lesson2version}.");
 
                 //----- Creating a Clone of Lesson 1 and adding Video Material to change the type of Lesson from Text to Video -----//
@@ -98,7 +98,9 @@ namespace Net011
                 lesson1Clone.SetId();
                 lesson1Clone.Description = "Clone of lesson 1 description.";
                 lesson1Clone.TrainingMaterials.Add(videoMat1);
-                var result1Clone = lesson1Clone.GetTrainingType();
+                var lesson1CloneType = lesson1Clone.GetTrainingType();
+                
+                Console.WriteLine($"Lesson 1 Clone training type is: {lesson1CloneType}.");
             }
             catch (Exception ex)
             {
