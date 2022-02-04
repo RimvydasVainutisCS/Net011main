@@ -5,6 +5,7 @@ namespace Net011
     public abstract class TrainingEntity
     {
         private string _description;
+        public int maxLenghtOfDescription = 256;
         public Guid Id
         {
             get;
@@ -18,14 +19,16 @@ namespace Net011
             }
             set
             {
-                if (value.Length > 256)
-                {
-                    throw new Exception("Description is longer than 256 chars.");
-                }
-                else if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new Exception("Invalid input.");
                 }
+                
+                if (value.Length > maxLenghtOfDescription)
+                {
+                    throw new Exception("Description is longer than 256 chars.");
+                }
+                else 
                 _description = value;
             }
         }
