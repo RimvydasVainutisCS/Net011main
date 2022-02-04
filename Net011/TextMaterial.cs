@@ -34,11 +34,7 @@ namespace Net011
         }
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
-            if (!(obj is TextMaterial))
+            if (obj == null && (!(obj is TextMaterial)))
             {
                 return false;
             }
