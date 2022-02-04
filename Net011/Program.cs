@@ -72,7 +72,7 @@ namespace Net011
                 lesson1.TrainingMaterials.Add(linkToNetRsc1);
                 lesson1.SetId();
                 lesson1.Description = "lesson1 description goes here!";
-                lesson1.SetVersion(new byte[8] { 2, 0, 2, 2, 0, 2, 0, 1 });
+                lesson1.SetVersion(new byte[8] { 2, 0, 2, 2, 0, 2, 0, 1});
 
                 var lesson1type = lesson1.GetTrainingType();
                 Console.WriteLine($"Lesson 1 training type is: {lesson1type}.");

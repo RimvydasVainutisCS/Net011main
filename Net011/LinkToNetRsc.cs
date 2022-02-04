@@ -26,7 +26,7 @@
             {
                 return false;
             }
-            return (Id == ((LinkToNetRsc)obj).Id);
+            return Id == (obj as LinkToNetRsc)?.Id;
         }
 
         public override int GetHashCode() { return 0; }

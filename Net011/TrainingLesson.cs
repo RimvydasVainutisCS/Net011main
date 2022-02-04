@@ -67,8 +67,19 @@ namespace Net011
 
         public void SetVersion(byte[] version)
         {
+            if (version.Length != 8)
+            {
+                throw new Exception("The size of version array must be exactly 8 bytes!");
+            }
             _version = version;
         }
+
+        //public TrainingMaterial Clone()
+        //{
+        //    TrainingMaterial trainingMaterial = (TrainingMaterial)this.MemberwiseClone();
+        //    trainingMaterial.Description = (string)Description.Clone();
+        //    return trainingMaterial;
+        //}
 
         public object Clone()
         {
