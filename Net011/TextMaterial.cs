@@ -4,6 +4,7 @@ namespace Net011
 {
     public class TextMaterial : TrainingMaterial
     {
+        private const int textLength = 10000;
         private string _text;
 
         public string Text
@@ -14,9 +15,9 @@ namespace Net011
             }
             set
             {
-                if (value.Length > 10000)
+                if (value.Length > textLength)
                 {
-                    throw new Exception("Text can't be longer than 10 000 chars.");
+                    throw new Exception($"Text can't be longer than {textLength} chars.");
                 }
                 _text = value;
             }
