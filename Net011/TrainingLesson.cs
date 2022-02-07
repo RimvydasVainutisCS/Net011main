@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Net011
 {
     public class TrainingLesson : TrainingEntity, IVersionable, ICloneable
     {
+        private const int versionLength = 8;
         private byte[] _version = new byte[8];
         public List<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
         public TrainingLesson()
@@ -67,29 +67,21 @@ namespace Net011
 
         public void SetVersion(byte[] version)
         {
-            if (version.Length != 8)
+            if (version.Length != versionLength)
             {
-                throw new Exception("The size of version array must be exactly 8 bytes!");
+                throw new Exception($"The size of version array must be exactly {versionLength} bytes!");
             }
             _version = version;
         }
 
-        //public TrainingMaterial Clone()
-        //{
-        //    TrainingMaterial trainingMaterial = (TrainingMaterial)this.MemberwiseClone();
-        //    trainingMaterial.Description = (string)Description.Clone();
-        //    return trainingMaterial;
-        //}
-
-        public object Clone()
+        object ICloneable.Clone()
         {
-            var clone = new TrainingLesson
-            {
-                Id = Id,
-                Description = Description,
-                TrainingMaterials = TrainingMaterials
-            };
-            return clone;
+            return Clone();
+        }
+
+        public TrainingLesson Clone()
+        {
+            return (TrainingLesson)MemberwiseClone();
         }
     }
 }
