@@ -29,7 +29,7 @@
             return Id == (obj as LinkToNetRsc)?.Id;
         }
 
-        public override int GetHashCode() { return 0; }
+        public override int GetHashCode() => new { _contentUri, _linkType }.GetHashCode();
 
 
     }

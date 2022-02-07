@@ -23,17 +23,17 @@ namespace Net011
                 {
                     throw new Exception("Invalid input.");
                 }
-                
+
                 if (value.Length > maxLenghtOfDescription)
                 {
                     throw new Exception($"Description is longer than {maxLenghtOfDescription} chars.");
                 }
-                else 
-                _description = value;
+                else
+                    _description = value;
             }
         }
         public TrainingEntity()
-        {            
+        {
         }
     }
 }

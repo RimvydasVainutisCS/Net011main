@@ -81,7 +81,11 @@ namespace Net011
 
         public TrainingLesson Clone()
         {
-            return (TrainingLesson)MemberwiseClone();
+            TrainingLesson trainingLessonClone = new TrainingLesson();
+            trainingLessonClone._version = _version;
+            // I am not sure about List deep cloning
+            List<TrainingMaterial> trainingMaterialsClone = new List<TrainingMaterial>();
+            return trainingLessonClone;
         }
     }
 }

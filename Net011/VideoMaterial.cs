@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Net011
 {
@@ -64,10 +63,10 @@ namespace Net011
             {
                 return false;
             }
-            return (Id == ((VideoMaterial)obj).Id);
+            return Id == (obj as VideoMaterial)?.Id;
         }
 
-        public override int GetHashCode() { return 0; }
+        public override int GetHashCode() => new { _videoContentUri, _splashScreenUri, _videoFormats, _version }.GetHashCode();
 
         public byte[] GetVersion()
         {

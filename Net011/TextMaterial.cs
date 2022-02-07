@@ -39,9 +39,9 @@ namespace Net011
             {
                 return false;
             }
-            return (Id == ((TextMaterial)obj).Id);
+            return Id == (obj as TextMaterial)?.Id;
         }
 
-        public override int GetHashCode() { return 0; }
+        public override int GetHashCode() => new { _text }.GetHashCode();
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Net011
+﻿namespace Net011
 {
     public class TrainingMaterial : TrainingEntity
     {
