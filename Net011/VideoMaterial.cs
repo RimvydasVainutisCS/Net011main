@@ -2,11 +2,13 @@
 
 namespace Net011
 {
-    public class VideoMaterial : TrainingMaterial
+    public class VideoMaterial : TrainingMaterial, IVersionable
     {
         private string _videoContentUri;
         private string _splashScreenUri;
-        private VideoFormats _videoFormats;
+        private VideoFormat _videoFormats;
+        private byte[] _version = new byte[8];
+        private const int versionLength = 8;
 
         public string VideoContentUri
         {
@@ -40,11 +42,44 @@ namespace Net011
             }
         }
 
-        public VideoMaterial(string videoContentUri, string splashScreenUri, VideoFormats videoFormat)
+        public VideoMaterial(string videoContentUri, string splashScreenUri, VideoFormat videoFormat)
         {
             _videoContentUri = videoContentUri;
             _splashScreenUri = splashScreenUri;
             _videoFormats = videoFormat;
+        }
+
+        public override string ToString()
+        {
+            return Description;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is VideoMaterial))
+            {
+                return false;
+            }
+            return Id == (obj as VideoMaterial)?.Id;
+        }
+
+        public override int GetHashCode() => new { _videoContentUri, _splashScreenUri, _videoFormats, _version }.GetHashCode();
+
+        public byte[] GetVersion()
+        {
+            return _version;
+        }
+
+        public void SetVersion(byte[] version)
+        {
+            if (version.Length != versionLength)
+            {
+                throw new Exception($"The size of version array must be exactly {versionLength} bytes!");
+            }
+            _version = version;
         }
     }
 }

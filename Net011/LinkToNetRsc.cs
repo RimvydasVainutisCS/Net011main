@@ -1,20 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Net011
-{    
-    internal class LinkToNetRsc : TrainingEntity
+﻿namespace Net011
+{
+    internal class LinkToNetRsc : TrainingMaterial
     {
         private string _contentUri;
-        private LinkTypes _linkType;
+        private LinkType _linkType;
 
-        public LinkToNetRsc(string contentUri, LinkTypes linkType)
+        public LinkToNetRsc(string contentUri, LinkType linkType)
         {
             _contentUri = contentUri;
             _linkType = linkType;
         }
+
+        public override string ToString()
+        {
+            return Description;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is LinkToNetRsc))
+            {
+                return false;
+            }
+            return Id == (obj as LinkToNetRsc)?.Id;
+        }
+
+        public override int GetHashCode() => new { _contentUri, _linkType }.GetHashCode();
+
+
     }
 }

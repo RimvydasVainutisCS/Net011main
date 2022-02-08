@@ -5,10 +5,11 @@ namespace Net011
     public abstract class TrainingEntity
     {
         private string _description;
-        private Guid _id;
+        private const int maxLenghtOfDescription = 256;
         public Guid Id
         {
-            get { return _id; }
+            get;
+            set;
         }
         public string Description
         {
@@ -18,28 +19,21 @@ namespace Net011
             }
             set
             {
-                if (value.Length > 256)
-                {
-                    throw new Exception("Description is longer than 256 chars.");
-                }
-                else if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new Exception("Invalid input.");
                 }
-                //else if (value == null)
-                //{
-                //    throw new Exception("Description can't have 'null' value.");
-                //}
-                //else if (value.Length < 1)
-                //{
-                //    throw new Exception("Description can't have 'empty' value.");
-                //}
-                _description = value;
+
+                if (value.Length > maxLenghtOfDescription)
+                {
+                    throw new Exception($"Description is longer than {maxLenghtOfDescription} chars.");
+                }
+                else
+                    _description = value;
             }
         }
         public TrainingEntity()
-        {            
+        {
         }
-
     }
 }
