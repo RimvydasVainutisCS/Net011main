@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IVersionable.cs" />
     <Compile Include="TrainingEntity.cs" />
     <Compile Include="LinkToNetRsc.cs" />
     <Compile Include="Program.cs" />
@@ -51,7 +52,7 @@
     <Compile Include="TextMaterial.cs" />
     <Compile Include="TrainingLesson.cs" />
     <Compile Include="TrainingMaterial.cs" />
-    <Compile Include="VideoFormats.cs" />
+    <Compile Include="VideoFormat.cs" />
     <Compile Include="VideoMaterial.cs" />
   </ItemGroup>
   <ItemGroup>
